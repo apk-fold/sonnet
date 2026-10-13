@@ -8,10 +8,10 @@ Sonnet est un projet personnel, non affilié au projet Jellyfin.
 
 ## Télécharger l'APK
 
-➡️ **[Télécharger Sonnet v0.2 (`sonnet.apk`)](https://github.com/apk-fold/sonnet/raw/main/sonnet.apk)**, soit 22 Mo. Le fichier est aussi visible
+➡️ **[Télécharger Sonnet v0.3 (`sonnet.apk`)](https://github.com/apk-fold/sonnet/raw/main/sonnet.apk)**, soit 22 Mo. Le fichier est aussi visible
 dans la liste des fichiers du dépôt.
 
-Empreinte SHA-256 pour vérifier le fichier : `b7fd67ad2d7e8222647457516e4c3eedb67b2f9700579918a04f55ec1f07a2b9`
+Empreinte SHA-256 pour vérifier le fichier : `efa1f1e1c26613420b90739e5371e7fe58a1d52628bb996a91ecf6825df84a39`
 
 Installation sur Android 8.0 ou plus récent :
 1. Télécharge `sonnet.apk` directement sur le téléphone.
@@ -20,9 +20,8 @@ Installation sur Android 8.0 ou plus récent :
 
 Remarques :
 - C'est un APK de **debug** (signé avec la clé de debug d'Android Studio, identifiant `com.matheo.sonnet.debug`).
-- **Change l'adresse du serveur au premier lancement.** Les adresses par défaut sont celles du serveur de l'auteur et ne
-  fonctionneront pas chez toi. Indique ton serveur Jellyfin dans Réglages › Serveur Jellyfin (et, si tu en as un, ton Bridge Hub
-  dans Réglages › Bridge Hub).
+- **Aucune adresse n'est codée en dur** : au premier lancement, Sonnet te demande l'adresse de ton serveur Jellyfin (et, en option,
+  celle de ton Bridge Hub). Tu peux les changer ensuite dans Réglages.
 - L'appli autorise le HTTP non chiffré, ce qui est pratique sur un réseau privé (Tailscale, réseau local).
 
 ## Fonctions
@@ -43,6 +42,14 @@ Remarques :
 - Pistes audio et sous-titres, vitesse de 0,5 à 3×, minuteur de veille, qualité et débit maximum, boost du volume, infos de
   lecture (codec, lecture directe ou transcodage), retour automatique en transcodage si un fichier ne passe pas.
 - Progression synchronisée avec Jellyfin (reprise, « Vu », Continuer à regarder).
+
+### Options Sonnet (Réglages › Options Sonnet)
+Chaque option s'active ou se coupe séparément, pour Jellyfin et pour le Bridge Hub :
+- **Animations GSAP** : affiches en cascade, transition de page, effet de ressort au toucher, vibrations légères.
+- **Tirer vers le bas** en haut d'une page : raccourcis (Accueil, Recherche, Favoris, Actualiser, Haut de page).
+- **Double-tap sur l'affiche** d'une fiche : favori. **Glisser un épisode** : vers la droite = vu / non vu, vers la gauche = favori.
+- **Thèmes** Sombre, AMOLED (noir pur) et Clair, plus une **teinte d'accent libre**.
+- [GSAP](https://gsap.com) (GreenSock) est embarqué localement dans l'appli.
 
 ### Application
 - WebView Jellyfin **persistante** : changer d'onglet est instantané, plier ou déplier ne recharge rien.
