@@ -8,10 +8,10 @@ Sonnet est un projet personnel, non affilié au projet Jellyfin.
 
 ## Télécharger l'APK
 
-➡️ **[Télécharger Sonnet v0.3 (`sonnet.apk`)](https://github.com/apk-fold/sonnet/raw/main/sonnet.apk)**, soit 22 Mo. Le fichier est aussi visible
+➡️ **[Télécharger Sonnet v0.4 (`sonnet.apk`)](https://github.com/apk-fold/sonnet/raw/main/sonnet.apk)**, soit 22 Mo. Le fichier est aussi visible
 dans la liste des fichiers du dépôt.
 
-Empreinte SHA-256 pour vérifier le fichier : `efa1f1e1c26613420b90739e5371e7fe58a1d52628bb996a91ecf6825df84a39`
+Empreinte SHA-256 pour vérifier le fichier : `3a39339de771e0e0ab1326ded792f8eab62249b5476c74f9073505ba82328a3d`
 
 Installation sur Android 8.0 ou plus récent :
 1. Télécharge `sonnet.apk` directement sur le téléphone.
@@ -40,12 +40,13 @@ Remarques :
 - **Passer l'intro ou le générique** (segments Jellyfin 10.10+ ou chapitres), en mode bouton ou automatique.
 - **Épisode suivant** avec compte à rebours, liste des épisodes de la saison, chapitres avec images.
 - Pistes audio et sous-titres, vitesse de 0,5 à 3×, minuteur de veille, qualité et débit maximum, boost du volume, infos de
-  lecture (codec, lecture directe ou transcodage), retour automatique en transcodage si un fichier ne passe pas.
+  lecture (codec, lecture directe ou transcodage), retour automatique en transcodage, puis en mode compatible (H.264 + AAC), si un fichier ne passe pas ; l'écran d'erreur détaille la cause.
 - Progression synchronisée avec Jellyfin (reprise, « Vu », Continuer à regarder).
 
 ### Options Sonnet (Réglages › Options Sonnet)
 Chaque option s'active ou se coupe séparément, pour Jellyfin et pour le Bridge Hub :
 - **Animations GSAP** : affiches en cascade, transition de page, effet de ressort au toucher, vibrations légères.
+- **Effets de fou** : aurore animée, cartes en 3D qui suivent le doigt, étincelles, titres lettre par lettre, parallaxe, ondes au toucher.
 - **Tirer vers le bas** en haut d'une page : raccourcis (Accueil, Recherche, Favoris, Actualiser, Haut de page).
 - **Double-tap sur l'affiche** d'une fiche : favori. **Glisser un épisode** : vers la droite = vu / non vu, vers la gauche = favori.
 - **Thèmes** Sombre, AMOLED (noir pur) et Clair, plus une **teinte d'accent libre**.
