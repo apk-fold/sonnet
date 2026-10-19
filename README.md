@@ -85,3 +85,7 @@ Si Gradle n'arrive pas à compiler, vérifie d'abord que `local.properties` cont
 
 Kotlin et Jetpack Compose, Media3 (ExoPlayer) pour la lecture, `androidx.window` pour les postures du Fold, Coil pour les
 affiches, DataStore pour les réglages. Android 8.0 (API 26) minimum, cible API 34.
+
+## v0.5 – lecteur inspiré de Jellyfin Android
+Profil d'appareil réécrit (décodeurs réels du téléphone), décodeurs audio FFmpeg (AC3, E-AC3, DTS, TrueHD…) fournis par le projet Jellyfin, URL de lecture corrigées (direct play / direct stream / transcodage), gros tampons réseau. Compilation automatique via GitHub Actions.
+Crédit : [jellyfin-android](https://github.com/jellyfin/jellyfin-android) (GPL-2.0).

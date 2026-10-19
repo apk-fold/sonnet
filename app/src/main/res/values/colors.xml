@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Sonnet palette: inherited from Opus (noir profond + violet) -->
+    <color name="violet_50">#EEEDFE</color>
+    <color name="violet_100">#CECBF6</color>
+    <color name="violet_200">#AFA9EC</color>
+    <color name="violet_400">#7F77DD</color>
+    <color name="violet_600">#534AB7</color>
+    <color name="violet_800">#3C3489</color>
+    <color name="violet_900">#26215C</color>
+
+    <color name="bg_black">#050208</color>
+    <color name="bg_surface_1">#0a0612</color>
+    <color name="bg_surface_2">#150c26</color>
+
+    <color name="text_primary">#EEEDFE</color>
+    <color name="text_secondary">#AFA9EC</color>
+    <color name="text_muted">#7F77DD</color>
+    <color name="divider">#26215C</color>
+</resources>

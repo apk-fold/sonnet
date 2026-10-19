@@ -1,0 +1,61 @@
+name: Compiler l'APK Sonnet
+
+on:
+  push:
+    branches: [main]
+    paths-ignore: ['sonnet.apk', 'README.md']
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  apk:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 21
+      - name: Clé de signature fixe (les mises à jour s'installent par-dessus)
+        run: |
+          mkdir -p ~/.android
+          cp ci/debug.keystore ~/.android/debug.keystore
+      - name: Compiler l'APK
+        run: |
+          set -o pipefail
+          chmod +x gradlew
+          ./gradlew assembleDebug --no-daemon --stacktrace 2>&1 | tee /tmp/gradle.log
+      - name: Journal de compilation (branche ci-log)
+        if: always()
+        run: |
+          mkdir -p /tmp/logs && cp /tmp/gradle.log /tmp/logs/ 2>/dev/null || true
+          cd /tmp/logs && git init -q && git checkout -q -b ci-log
+          git config user.name github-actions && git config user.email actions@users.noreply.github.com
+          tail -n 400 gradle.log > gradle-tail.log 2>/dev/null || true
+          git add -A && git commit -qm "log build ${{ github.run_number }}" || true
+          git push -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" ci-log || true
+      - name: Récupérer l'APK
+        run: cp app/build/outputs/apk/debug/app-debug.apk sonnet.apk && sha256sum sonnet.apk
+      - uses: actions/upload-artifact@v4
+        with:
+          name: sonnet-apk
+          path: sonnet.apk
+      - name: Publier la release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          TAG="build-${{ github.run_number }}"
+          gh release create "$TAG" sonnet.apk --title "Sonnet – build ${{ github.run_number }}" --notes "APK compilé automatiquement (${GITHUB_SHA::7})." --latest
+      - name: Enregistrer l'APK dans le dépôt
+        run: |
+          cp sonnet.apk /tmp/sonnet.apk
+          git config user.name "github-actions"
+          git config user.email "actions@users.noreply.github.com"
+          git fetch origin main && git reset -q --hard origin/main
+          cp /tmp/sonnet.apk sonnet.apk
+          git add -f sonnet.apk
+          git commit -m "APK Sonnet (build ${{ github.run_number }})" || exit 0
+          git push origin HEAD:main
+

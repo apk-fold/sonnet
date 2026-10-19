@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+    <!-- Ton serveur Jellyfin / Bridge Hub peut être en http (LAN, Tailscale, WireGuard…) : on l'autorise partout,
+         puisque l'adresse est saisie par toi dans l'appli et non codée en dur. -->
+    <base-config cleartextTrafficPermitted="true">
+        <trust-anchors>
+            <certificates src="system" />
+            <certificates src="user" />
+        </trust-anchors>
+    </base-config>
+</network-security-config>

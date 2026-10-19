@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Sonnet</string>
+
+    <string name="nav_home">Accueil</string>
+    <string name="nav_library">Bibliothèque</string>
+    <string name="nav_photos">Photos</string>
+    <string name="nav_bridge">Bridges</string>
+    <string name="nav_settings">Paramètres</string>
+
+    <string name="settings_title">Paramètres</string>
+    <string name="settings_server">Serveur Jellyfin</string>
+    <string name="settings_server_url">URL du serveur</string>
+    <string name="settings_bridge">Bridge Hub</string>
+    <string name="settings_bridge_url">URL du Bridge Hub</string>
+    <string name="settings_appearance">Apparence</string>
+    <string name="settings_accent">Couleur d\'accent</string>
+    <string name="settings_about">À propos</string>
+    <string name="settings_save">Enregistrer</string>
+
+    <string name="splash_tagline">Ton Jellyfin, en violet.</string>
+    <string name="loading">Chargement…</string>
+    <string name="retry">Réessayer</string>
+    <string name="connection_error">Impossible de joindre le serveur</string>
+</resources>
